@@ -1,4 +1,4 @@
-namespace TaskOne;
+namespace TaskOne.Models;
 
 public class Triangle
 {

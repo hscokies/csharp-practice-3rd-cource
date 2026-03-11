@@ -1,3 +1,5 @@
+using TaskOne.Models;
+
 namespace TaskOne;
 
 public static class TriangleDemo
