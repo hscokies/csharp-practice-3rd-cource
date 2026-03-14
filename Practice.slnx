@@ -1,4 +1,6 @@
 <Solution>
-  <Project Path="TaskOne/TaskOne.csproj" />
-  <Project Path="TaskTwo/TaskTwo.csproj" />
+  <Project Path="Shared/Shared.csproj" />
+  <Project Path="Task1/Task1.csproj" />
+  <Project Path="Task2/Task2.csproj" />
+  <Project Path="Task3/Task3.csproj" />
 </Solution>
