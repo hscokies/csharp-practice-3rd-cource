@@ -10,7 +10,7 @@ internal sealed class Pentagon : Polygon
     }
 
 
-    public static Pentagon CreateRegular(double radius, Point center)
+    public static Pentagon Create(double radius, Point center)
     {
         const int points = 5;
 

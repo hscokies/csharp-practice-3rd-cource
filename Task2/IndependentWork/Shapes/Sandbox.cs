@@ -17,7 +17,7 @@ internal static class Sandbox
         var rectangle = new Rectangle(new Point(10, 10), width: 30, height: 40);
         var square = new Square(new Point(13, -1), side: 10);
         var triangle = new Triangle(new Point(0, 0), new Point(2, 0), new Point(1, 2));
-        var pentagon = Pentagon.CreateRegular(
+        var pentagon = Pentagon.Create(
             radius: 6,
             center: new Point(2, 3)
         );
