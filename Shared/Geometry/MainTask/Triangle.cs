@@ -1,4 +1,4 @@
-namespace Task1.MainTask.Models;
+namespace Shared.Geometry.MainTask;
 
 public class Triangle
 {
@@ -59,15 +59,27 @@ public class Triangle
 
         return _c.Value;
     }
+
+    public double Area()
+    {
+        return 0.5 * _a * _b * Math.Sin(AngleAbRad);
+    }
     
     public double Perimeter()
     {
         return _a + _b + GetC();
     }
 
-    public double Area()
+    // Переопределил метод ToString вместо Show для наглядности наследования
+    public virtual void Show()
     {
-        return 0.5 * _a * _b * Math.Sin(AngleAbRad);
+        Console.WriteLine($"{nameof(Triangle)}\n\t" +
+                          $"A:{_a}\n\t" +
+                          $"B:{_b}\n\t" +
+                          $"C:{GetC()}\n\t" +
+                          $"Angle AB:{_angleAb}\n\t" +
+                          $"Perimeter:{Perimeter()}\n\t" +
+                          $"Area:{Area()}");
     }
     
     
@@ -99,10 +111,5 @@ public class Triangle
         var a = triangle._a - 1;
         var b = triangle._b - 1;
         return new Triangle(a, b, triangle._angleAb);
-    }
-
-    public override string ToString()
-    {
-        return $"{nameof(Triangle)}\n\tA:{_a}\n\tB:{_b}\n\tC:{GetC()}\n\tAngle AB:{_angleAb}";
     }
 }

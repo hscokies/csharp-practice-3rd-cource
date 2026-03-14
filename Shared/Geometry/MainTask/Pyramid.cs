@@ -1,6 +1,4 @@
-using Task1.MainTask.Models;
-
-namespace Task2.MainTask.Models;
+namespace Shared.Geometry.MainTask;
 
 public class Pyramid : Triangle
 {
@@ -40,8 +38,9 @@ public class Pyramid : Triangle
         return left.Volume() + right.Volume();
     }
 
-    public override string ToString()
+    public override void Show()
     {
-        return base.ToString() + $"\n{nameof(Pyramid)}:\n\tHeight:{_height}\n\tVolume:{Volume()}";
+        base.Show();
+        Console.WriteLine($"{nameof(Pyramid)}:\n\tHeight:{_height}\n\tVolume:{Volume()}");
     }
 }

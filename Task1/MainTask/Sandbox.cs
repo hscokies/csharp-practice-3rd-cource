@@ -1,4 +1,4 @@
-using Task1.MainTask.Models;
+using Shared.Geometry.MainTask;
 
 namespace Task1.MainTask;
 
@@ -27,29 +27,29 @@ public static class Sandbox
         var triangle = trianglesCollection[0];
         
         PrintHeader("Initial state");
-        Console.WriteLine(triangle);
+        triangle.Show();
         
         PrintHeader("Sum");
-        Console.WriteLine(triangle + triangle);
+        (triangle + triangle).Show();
 
         PrintHeader("Multiplication (10)");
-        Console.WriteLine(triangle * 10);
+        (triangle * 10).Show();
         
         PrintHeader("Pre-increment");
-        Console.WriteLine(++triangle);
-        Console.WriteLine(triangle);
+        (++triangle).Show();
+        triangle.Show();
         
         PrintHeader("Post-increment");
-        Console.WriteLine(triangle++);
-        Console.WriteLine(triangle);
+        (triangle++).Show();
+        triangle.Show();
         
         PrintHeader("Pre-subtraction");
-        Console.WriteLine(--triangle);
-        Console.WriteLine(triangle);
+        (--triangle).Show();
+        triangle.Show();
         
         PrintHeader("Post-subtraction");
-        Console.WriteLine(triangle--);
-        Console.WriteLine(triangle);
+        (triangle--).Show();
+        triangle.Show();
     }
     
     private static void PrintHeader(string text)

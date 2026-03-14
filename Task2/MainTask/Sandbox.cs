@@ -1,4 +1,4 @@
-using Task2.MainTask.Models;
+using Shared.Geometry.MainTask;
 
 namespace Task2.MainTask;
 
@@ -17,7 +17,9 @@ internal static class Sandbox
         var left = new Pyramid(6, 8, 30, 10);
         var right = new Pyramid(5, 5, 60, 12);
         
-        Console.WriteLine($"{left}\n\n{right}");
+        left.Show();
+        Console.WriteLine();
+        right.Show();
         
         Console.WriteLine($"\nSum of volumes: {left + right}");
     }
@@ -27,7 +29,9 @@ internal static class Sandbox
         PrintHeader(nameof(Copy));
         var pyramid = new Pyramid(7, 9, 45, 8);
         var copy = new Pyramid(pyramid);
-        Console.WriteLine($"{pyramid}\n\n{copy}");
+        pyramid.Show();
+        Console.WriteLine();
+        copy.Show();
     }
 
     private static void PyramidArray()
@@ -42,8 +46,9 @@ internal static class Sandbox
 
         foreach (var pyramid in pyramids)
         { 
-            // ToString() вызывает Volume(), поэтому тут просто вывод
-            Console.WriteLine($"{pyramid}\n\n");
+            // вызывает Volume() под капотом
+            pyramid.Show();
+            Console.WriteLine();
         }
     }
     
