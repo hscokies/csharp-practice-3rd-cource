@@ -6,7 +6,12 @@ public class Pyramid : Triangle
     private double? _volume;
     
     public double GetHeight() => _height;
-    public double SetHeight(double height) => _height = height;
+
+    public void SetHeight(double height)
+    {
+        _height = height;
+        _volume = null;
+    }
 
     public Pyramid(double a, double b, double angleAb, double height)
     {
