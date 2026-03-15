@@ -28,6 +28,7 @@ public class Triangle
     public void SetA(double value)
     {
         _a = value;
+        _c = null;
     }
     
     public double GetB()
@@ -37,6 +38,7 @@ public class Triangle
     public void SetB(double value)
     {
         _b = value;
+        _c = null;
     }
     
     public double GetAngleAb()
@@ -46,6 +48,7 @@ public class Triangle
     public void SetAngleAb(double value)
     {
         _angleAb = value;
+        _c = null;
     }
 
     public double GetC()
