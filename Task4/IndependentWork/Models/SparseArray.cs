@@ -9,7 +9,15 @@ internal sealed class SparseArray<T>(T defaultValue = default(T))
 
     public T this[int index]
     {
-        get => _data.GetValueOrDefault(index, defaultValue);
+        get
+        {
+            if (_data.Count == 0)
+            {
+                throw new InvalidOperationException("Sparse array is empty.");
+            }
+
+            return _data.TryGetValue(index, out var value) ? value : throw new IndexOutOfRangeException();
+        }
         set
         {
             if (EqualityComparer<T>.Default.Equals(value, defaultValue))
