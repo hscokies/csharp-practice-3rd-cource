@@ -92,36 +92,12 @@ internal sealed class CustomLinkedList<T>
             _tail!.Next = null;
         }
     }
-
-    private void Remove(Node node)
-    {
-        if (node == _head)
-        {
-            RemoveFirst();
-            return;
-        }
-
-        if (node == _tail)
-        {
-            RemoveLast();
-            return;
-        }
-
-        node.Previous!.Next = node.Next;
-        node.Next!.Previous = node.Previous;
-        node.Invalidate();
-    }
+    
 
 
     private record Node(T Value)
     {
         public Node? Next { get; internal set; }
         public Node? Previous { get; internal set; }
-
-        internal void Invalidate()
-        {
-            Next = null;
-            Previous = null;
-        }
     }
 }
