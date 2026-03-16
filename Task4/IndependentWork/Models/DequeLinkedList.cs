@@ -1,6 +1,6 @@
 namespace Task4.IndependentWork.Models;
 
-internal sealed class Deque<T>
+internal sealed class DequeLinkedList<T>
 {
     private int _count;
     public bool IsEmpty => _count is 0;
@@ -59,7 +59,7 @@ internal sealed class Deque<T>
     {
         if (_head is null)
         {
-            throw new InvalidOperationException($"{nameof(Deque<>)} is empty");
+            throw new InvalidOperationException($"{nameof(DequeLinkedList<>)} is empty");
         }
 
         var value = _head.Value;
@@ -101,9 +101,8 @@ internal sealed class Deque<T>
         return value;
     }
 
-    private sealed class Node(T value)
+    private sealed record Node(T Value)
     {
-        public T Value { get; } = value;
         public Node? Previous { get; set; }
         public Node? Next { get; set; }
     }

@@ -7,14 +7,13 @@ internal static class Sandbox
     public static void Main()
     {
         // DynamicArray();
-        // LinkedList();
+        // DequeLinkedList();
         // CircularLinkedList();
         // BinaryTree();
         // Queue();
         // Stack();
-        // Deque();
         // SortedSet();
-        SparseArray();
+        // SparseArray();
     } 
 
 
@@ -37,14 +36,14 @@ internal static class Sandbox
         }
     }
     
-    private static void LinkedList()
+    private static void DequeLinkedList()
     {
-        var linkedList = new CustomLinkedList<int>();
-        linkedList.AddFirst(2);
-        linkedList.AddFirst(1);
-        linkedList.AddLast(3);
-        linkedList.RemoveFirst();
-        linkedList.RemoveLast();
+        var deque = new DequeLinkedList<int>();
+        deque.AddFirst(2);
+        deque.AddFirst(1);
+        deque.AddLast(3);
+        deque.RemoveFirst();
+        deque.RemoveLast();
     }
     
     private static void CircularLinkedList()
@@ -103,17 +102,6 @@ internal static class Sandbox
         Console.WriteLine(queue.Dequeue());
 
         Console.WriteLine(queue.Dequeue());
-    }
-
-    private static void Deque()
-    {
-        var deque = new Deque<int>();
-        deque.AddFirst(1);
-        deque.AddLast(3);
-        deque.AddLast(2);
-        
-        deque.RemoveFirst();
-        deque.RemoveLast();
     }
 
     private static void SortedSet()
