@@ -8,6 +8,9 @@ public class Triangle
     private double _angleAb;
     private double AngleAbRad => _angleAb * Math.PI / 180d;
 
+    private double? _area;
+    private double? _perimeter;
+
 
     public Triangle()
     {
@@ -29,6 +32,9 @@ public class Triangle
     {
         _a = value;
         _c = null;
+
+        _area = null;
+        _perimeter = null;
     }
     
     public double GetB()
@@ -39,6 +45,9 @@ public class Triangle
     {
         _b = value;
         _c = null;
+        
+        _area = null;
+        _perimeter = null;
     }
     
     public double GetAngleAb()
@@ -49,11 +58,14 @@ public class Triangle
     {
         _angleAb = value;
         _c = null;
+        
+        _area = null;
+        _perimeter = null;
     }
 
     public double GetC()
     {
-        if (_c != null)
+        if (_c.HasValue)
         {
             return _c.Value;
         }
@@ -65,12 +77,24 @@ public class Triangle
 
     public double Area()
     {
-        return 0.5 * _a * _b * Math.Sin(AngleAbRad);
+        if (_area.HasValue)
+        {
+            return _area.Value;
+        }
+        
+        _area = 0.5 * _a * _b * Math.Sin(AngleAbRad);
+        return _area.Value;
     }
     
     public double Perimeter()
     {
-        return _a + _b + GetC();
+        if (_perimeter.HasValue)
+        {
+            return _perimeter.Value;
+        }
+        
+        _perimeter = _a + _b + GetC();
+        return _perimeter.Value;
     }
 
     // Переопределил метод ToString вместо Show для наглядности наследования
