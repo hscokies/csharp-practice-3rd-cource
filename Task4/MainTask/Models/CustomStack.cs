@@ -3,6 +3,7 @@ namespace Task4.MainTask.Models;
 internal sealed class CustomStack<T>
 {
     private readonly List<T> _items = [];
+    private Index Pointer => _items.Count > 0 ? new Index(1, true) :  throw new InvalidOperationException($"{nameof(CustomStack<>)} is empty");
 
     public void Push(T item)
     {
@@ -19,15 +20,6 @@ internal sealed class CustomStack<T>
 
     public T Peek()
     {
-        ThrowIfEmpty();
-        return _items[^1];
-    }
-
-    private void ThrowIfEmpty()
-    {
-        if (_items.Count is 0)
-        {
-            throw new InvalidOperationException($"{nameof(CustomStack<>)} is empty");
-        }
+        return _items[Pointer];
     }
 }
